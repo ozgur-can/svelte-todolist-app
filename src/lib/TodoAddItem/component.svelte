@@ -1,6 +1,13 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+  import { completedCount, count } from "../../stores";
+
   export let todoText: string = "";
   export let onAddHandler: (todoText: string) => void;
+
+  onMount(() => {
+    completedCount.set(0);
+  });
 
   function handleKeydown(e: KeyboardEvent) {
     // add task if "enter" pressed

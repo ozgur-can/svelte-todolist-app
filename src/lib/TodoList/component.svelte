@@ -1,7 +1,16 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import type { ITodo } from "../types";
   import TodoItem from "../TodoItem/component.svelte";
   import TodoAddItem from "../TodoAddItem/component.svelte";
+  import { completedCount, count } from "../../stores";
+
+  onMount(() => {
+    count.set(todos.length);
+    const completedTasks = todos.filter((task) => task.isCompleted === true);
+    completedCount.set(completedTasks.length);
+  });
+
   export let todos: ITodo[] = [];
   let todoText = "";
 
@@ -10,6 +19,7 @@
     else {
       // delete todo with id
       todos = todos.filter((item) => item.id !== id);
+      count.update((n) => n - 1);
     }
   };
 
@@ -27,6 +37,7 @@
       ];
       // clear input
       todoText = "";
+      count.update((n) => n + 1);
     }
   };
 </script>
