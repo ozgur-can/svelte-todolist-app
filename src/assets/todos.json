@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 0,
+      "text": "Do some exercise",
+      "isCompleted": false
+    },
+    {
+      "id": 1,
+      "text": "Read some book",
+      "isCompleted": false
+    },
+    {
+      "id": 2,
+      "text": "Learn Angular",
+      "isCompleted": true
+    },
+    {
+      "id": 3,
+      "text": "Buy milk",
+      "isCompleted": false
+    },
+    {
+      "id": 4,
+      "text": "Create to-do list app",
+      "isCompleted": true
+    }
+  ]
+}

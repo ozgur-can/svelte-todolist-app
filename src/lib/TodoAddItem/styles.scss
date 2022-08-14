@@ -1,0 +1,28 @@
+.todoCard__addNewItem {
+  display: flex;
+  align-items: center;
+  width: calc(100% - var(--blockSpace));
+
+  .todoCard__inputBox {
+    background-color: var(--inputBoxBgColor);
+    height: var(--itemHeight);
+    margin: var(--blockSpace);
+    border: none;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    text-indent: 10px;
+
+    &:focus {
+      outline-style: solid;
+      outline-color: var(--headerColor);
+    }
+  }
+
+  .todoCard__addNewItemButton {
+    height: var(--itemHeight);
+    width: var(--itemHeight);
+    font-size: large;
+    border: none;
+  }
+}

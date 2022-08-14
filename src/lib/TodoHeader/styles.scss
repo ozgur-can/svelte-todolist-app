@@ -1,0 +1,9 @@
+.todoCard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--headerColor);
+  color: #fff;
+  height: var(--itemHeight);
+  padding: 0 var(--blockSpace);
+}

@@ -1,0 +1,12 @@
+.todoCard {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--todoCardWidth);
+  height: var(--todoCardHeight);
+  transform: translate(-50%, -50%);
+  background-color: var(--todoCardBgColor);
+  filter: drop-shadow(0 0 1rem gray);
+}

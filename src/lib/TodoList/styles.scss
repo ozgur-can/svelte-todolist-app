@@ -1,0 +1,9 @@
+.todoCard__list {
+  list-style: none;
+  background-color: var(--listBgColor);
+  height: calc(var(--itemHeight) * 5);
+  margin: 0 var(--blockSpace) var(--blockSpace) var(--blockSpace);
+  padding: 0;
+  user-select: none;
+  overflow-y: scroll;
+}
