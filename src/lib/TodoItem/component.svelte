@@ -11,6 +11,7 @@
   // };
 
   const onCheckBoxChange = () => {
+    // update counters
     if (task.isCompleted) {
       completedCount.update((n) => n + 1);
     } else {

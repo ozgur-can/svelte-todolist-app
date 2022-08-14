@@ -17,9 +17,21 @@
   const onDeleteHandler = (id: number) => {
     if (!todos || (todos && todos.length === 0)) return;
     else {
+      // update counter
+      count.update((n) => n - 1);
+
+      // check isCompleted prop from selected task
+      const isCompleted = todos.find(
+        (item) => item.id === id && item.isCompleted
+      );
+
+      // update counter
+      if (isCompleted) {
+        completedCount.update((n) => n - 1);
+      }
+
       // delete todo with id
       todos = todos.filter((item) => item.id !== id);
-      count.update((n) => n - 1);
     }
   };
 
@@ -37,6 +49,7 @@
       ];
       // clear input
       todoText = "";
+      // update counter
       count.update((n) => n + 1);
     }
   };
