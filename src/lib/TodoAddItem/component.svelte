@@ -1,5 +1,5 @@
 <script lang="ts">
-  let todoText: string = "";
+  export let todoText: string = "";
   export let onAddHandler: (todoText: string) => void;
 </script>
 
@@ -13,10 +13,7 @@
   <button
     class="todoCard__addNewItemButton"
     id="todoCard__addNewItemButton"
-    on:click={() => {
-      onAddHandler(todoText);
-      todoText = "";
-    }}>+</button
+    on:click={() => onAddHandler(todoText)}>+</button
   >
 </div>
 

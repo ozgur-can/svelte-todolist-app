@@ -1,16 +1,41 @@
 <script lang="ts">
   import type { ITodo } from "../types";
   import TodoItem from "../TodoItem/component.svelte";
+  import TodoAddItem from "../TodoAddItem/component.svelte";
   export let todos: ITodo[] = [];
+  let todoText = "";
 
   const onDeleteHandler = (id: number) => {
-    if (todos && todos.length === 0) return;
+    if (!todos || (todos && todos.length === 0)) return;
     else {
+      // delete todo with id
       todos = todos.filter((item) => item.id !== id);
+    }
+  };
+
+  const onAddHandler = () => {
+    if (!todos || todoText === "") return;
+    else {
+      // update todo array
+      todos = [
+        ...todos,
+        {
+          id: todos.length,
+          isCompleted: false,
+          text: todoText,
+        },
+      ];
+      // clear input
+      todoText = "";
     }
   };
 </script>
 
+<!-- usage 1 -->
+<!-- <TodoAddItem {onAddHandler} bind:todoText={todoText} /> -->
+
+<!-- usage 2 -->
+<TodoAddItem {onAddHandler} bind:todoText />
 <ul class="todoCard__list" id="todoCard__list">
   {#each todos as todo}
     <TodoItem task={todo} {onDeleteHandler} />
