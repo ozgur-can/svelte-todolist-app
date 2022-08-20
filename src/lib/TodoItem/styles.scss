@@ -4,6 +4,7 @@
   height: var(--itemHeight);
   line-height: var(--itemHeight);
   padding: 0 var(--blockSpace);
+  color: var(--textColor);
 
   &--completed {
     @extend .todoCard__item;

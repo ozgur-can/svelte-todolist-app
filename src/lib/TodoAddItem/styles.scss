@@ -12,6 +12,7 @@
     padding: 0;
     width: 100%;
     text-indent: 10px;
+    color: var(--textColor);
 
     &:focus {
       outline-style: solid;
@@ -24,5 +25,7 @@
     width: var(--itemHeight);
     font-size: large;
     border: none;
+    background-color: var(--listBgColor);
+    color: var(--textColor);
   }
 }
